@@ -59,7 +59,7 @@ def main():
                     open_ips.append(result) 
 
         if open_ips: 
-            print("Porta 443 está aberta nos seguintes IPs:") 
+            print("Sucesso:") 
             for ip in open_ips: 
                 print(ip) 
  
