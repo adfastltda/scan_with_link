@@ -52,7 +52,7 @@ def main():
     elif option == 3:
         url = "https://bitbin.it/ADRgwo4o/raw/" # Change this URL
     else:
-        url = "https://bitbin.it/ADRgwo4o/raw/" # Change this URL
+        url = "https://bitbin.it/7P5WoQbn/raw/" # Change this URL
 
     response = requests.get(url)
     if response.status_code == 200:
@@ -70,7 +70,7 @@ def main():
     for ip_range in ip_ranges: 
         ip_list = parse_ip_range(ip_range) 
  
-        print(f"\nTestando IPs em {ip_range}...\n") 
+        print(f"\nTestando IPs no ranger: {ip_range}...\n") 
         open_ips = [] 
  
         with concurrent.futures.ThreadPoolExecutor(max_workers=num_threads) as executor: 
