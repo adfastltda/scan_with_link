@@ -1,5 +1,5 @@
 #!/bin/bash
-pkg install python -y
+pkg install python
 pip install requests
 pkg install git
 
