@@ -29,8 +29,31 @@ def parse_ip_range(ip_range):
  
 def main(): 
 
+    # Menu
+    while True:
+        print("Menu:")
+        print("1. Cloudflare Scan Lento")
+        print("2. Cloudfront Scan Lento")
+        print("3. Cloudflare Scan Rapido")
+        print("4. Cloudfront Scan Rapido")
+        try:
+            option = int(input("Enter your option (1-4): "))
+            if option not in [1, 2, 3, 4]:
+                raise ValueError
+            break
+        except ValueError:
+            print("Invalid input. Please enter a number between 1 and 4.")
+
     # Get IP ranges and CIDR from the link
-    url = "https://bitbin.it/ADRgwo4o/raw/"
+    if option == 1:
+        url = "https://bitbin.it/ADRgwo4o/raw/"
+    elif option == 2:
+        url = "https://bitbin.it/ZG86YD7p/raw/" # Change this URL
+    elif option == 3:
+        url = "https://bitbin.it/ADRgwo4o/raw/" # Change this URL
+    else:
+        url = "https://bitbin.it/ADRgwo4o/raw/" # Change this URL
+
     response = requests.get(url)
     if response.status_code == 200:
         ip_ranges = response.text.splitlines()
@@ -47,7 +70,7 @@ def main():
     for ip_range in ip_ranges: 
         ip_list = parse_ip_range(ip_range) 
  
-        print(f"\nTestando IPs em {ip_range} na porta 443...\n") 
+        print(f"\nTestando IPs em {ip_range}...\n") 
         open_ips = [] 
  
         with concurrent.futures.ThreadPoolExecutor(max_workers=num_threads) as executor: 
