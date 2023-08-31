@@ -1,6 +1,4 @@
 #!/bin/bash
-apt update -y > /dev/null
-apt upgrade -y > /dev/null
 pkg install python -y > /dev/null
 pip install requests > /dev/null
 pkg install git > /dev/null
