@@ -62,6 +62,7 @@ def main():
         return
 
     try: 
+        print(f"\nDESLIGUE O WI-FI\n") 
         num_threads = int(input("Digite o número de threads (padrão: 100): ") or 100) 
     except ValueError: 
         print("Entrada inválida. Usando 100 threads por padrão.") 
