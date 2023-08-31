@@ -69,5 +69,5 @@ def main():
 
         os.system('clear' if os.name == 'posix' else 'cls')  # Limpar a tela 
 
-if _name_ == "_main_": 
+if __name__ == "__main__": 
     main()
